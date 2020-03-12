@@ -1,0 +1,21 @@
+SELECT UsersProfile.ProfileID, UsersProfile.ProfileName, Location.LocationCost, Reviews.ReviewNumber
+FROM UsersProfile
+INNER JOIN UsersLocationTable ON UsersProfile.ProfileID = UsersLocationTable.ProfileID
+INNER JOIN Location ON UsersLocationTable.LocationID = Location.LocationID
+INNER JOIN LocationReviewsTable ON Location.LocationID = LocationReviewsTable.LocationID
+INNER JOIN Reviews ON LocationReviewsTable.ReviewID = Reviews.ReviewID;
+
+
+
+
+SELECT LocationType.LocationTypeID, LocationType.LocationTypeName, Location.LocationName, Location.LocationAddress 
+FROM LocationType 
+INNER JOIN Location ON LocationType.LocationTypeID = Location.LocationTypeID
+
+
+
+
+SELECT UsersProfile.ProfileID, Location.LocationName, Location.LocationAddress 
+FROM UsersProfile 
+INNER JOIN UsersLocationTable ON UsersProfile.ProfileID = UsersLocationTable.ProfileID 
+INNER JOIN Location ON UsersLocationTable.LocationID = Location.LocationID
